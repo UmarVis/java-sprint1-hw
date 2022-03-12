@@ -8,7 +8,7 @@ public class StepTracker {
     Converter converter = new Converter();
     int targetSteps = 10000;
 
-    public void StepTracker() {
+    public StepTracker() {
 
         for (int i = 1; i < 13; i++) {
             monthToData.put(i, new MonthData());
@@ -29,6 +29,15 @@ public class StepTracker {
             steps = scanner.nextInt();
         }
         monthToData.get(month).addSteps(--day, steps);
+    }
+
+    public void getStatistic(int month) {
+        System.out.println("\nОбщее количество шагов за " + month + " месяц: " + getMonthSteps(month));
+        System.out.println("Максимальное пройденное количество шагов в " + month + " месяце: " + getMaxStepsMonth(month));
+        System.out.println("Среднее количество шагов за " + month + " месяц: " + getAverageSteps(month));
+        getDistance(month);
+        getCalories(month);
+        System.out.println("Лучшая серия: " + getMaxTargetSteps(month) + " дней.");
     }
 
     public void getDaySteps(int month) {

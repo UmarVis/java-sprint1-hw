@@ -5,9 +5,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         StepTracker stepTracker = new StepTracker();
-        stepTracker.StepTracker();
         printMenu();
-
         int userInput = scanner.nextInt();
 
         while (userInput != 0) {
@@ -19,12 +17,7 @@ public class Main {
                 System.out.println("За какой месяц напечатать статитстику?");
                 int month = scanner.nextInt();
                 stepTracker.getDaySteps(month);
-                System.out.println("\nОбщее количество шагов за " + month + " месяц: " + stepTracker.getMonthSteps(month));
-                System.out.println("Максимальное пройденное количество шагов в " + month + " месяце: " + stepTracker.getMaxStepsMonth(month));
-                System.out.println("Среднее количество шагов за " + month + " месяц: " + stepTracker.getAverageSteps(month));
                 stepTracker.getDistance(month);
-                stepTracker.getCalories(month);
-                System.out.println("Лучшая серия: " + stepTracker.getMaxTargetSteps(month) + " дней.");
             } else if (userInput == 3) {
                 System.out.println("Введите новый целевой показатель:");
                 int target = scanner.nextInt();
