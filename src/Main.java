@@ -16,8 +16,7 @@ public class Main {
             } else if (userInput == 2) {
                 System.out.println("За какой месяц напечатать статитстику?");
                 int month = scanner.nextInt();
-                stepTracker.getDaySteps(month);
-                stepTracker.getDistance(month);
+                stepTracker.getStatistic(month);
             } else if (userInput == 3) {
                 System.out.println("Введите новый целевой показатель:");
                 int target = scanner.nextInt();
